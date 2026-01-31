@@ -1,6 +1,6 @@
 # Minimal DE for Archlinux
 
-# Dependencies
+### Dependencies
 
 ```bash
 sudo pacman -Sy --needed wget git base-devel

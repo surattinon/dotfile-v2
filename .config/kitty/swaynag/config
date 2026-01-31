@@ -1,0 +1,16 @@
+[custom]
+font=JetBrainsMono Nerd Font 10
+dismiss-button=Dismiss
+background=313244
+border=313244
+border-bottom=313244
+button-background=45475A
+text=FFFFFF
+border-bottom-size=3
+message-padding=5
+details-border-size=2
+button-border-size=2
+button-gap=3
+button-dismiss-gap=3
+button-margin-right=6
+button-padding=5

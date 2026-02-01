@@ -100,6 +100,7 @@ bindkey '^ ' autosuggest-accept
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export SELECTED_EDITOR=nvim
+export GCM_CREDENTIAL_STORE=secretservice
 
 #######################$
 ## SHELL INTEGRATIONS ##

@@ -1,5 +1,4 @@
 # Minimal DE for Archlinux
-
 ### Dependencies
 
 ```bash
@@ -14,5 +13,5 @@ makepkg -si
 ```
 
 ```bash
-paru -S --needed kitty foot nvim sway-nvidia swaync waybar fzf zsh tmux neovim
+paru -S --needed kitty foot nvim sway-nvidia swaync waybar fzf zsh tmux neovim eza bat zoxide wmenu j4-dmenu-desktop hyprpaper hyprlock hypridle ttf-jetbrains-mono-nerd
 ```

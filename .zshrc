@@ -76,7 +76,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=always --color=always $
 zstyle ':fzf-tab:complete:__zoxide__z:*' fzf-preview 'eza --icons=always --color=always'
 
 # NVM Init
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 # YAZI Setup
 function y() {
@@ -124,3 +124,5 @@ alias cat='bat'
 
 alias lzd="lazydocker"
 alias lzg="lazygit"
+
+alias spt="spotify_player"

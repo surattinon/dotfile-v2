@@ -27,8 +27,13 @@ window#waybar {
     background-color: @surface1;
 }
 
+#workspaces button.active {
+    color: @text;
+    background-color: @surface1;
+}
+
 #workspaces button:hover {
-	background-color: #5e81ac;
+	background-color: @surface1;
 }
 
 #custom-date, #clock, #battery, #pulseaudio, #network {

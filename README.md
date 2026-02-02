@@ -13,5 +13,5 @@ makepkg -si
 ```
 
 ```bash
-paru -S --needed kitty foot nvim sway-nvidia swaync waybar fzf zsh tmux neovim eza bat zoxide wmenu j4-dmenu-desktop hyprpaper hyprlock hypridle ttf-jetbrains-mono-nerd
+paru -S --needed kitty foot nvim sway-nvidia swaync waybar-git fzf zsh tmux neovim eza bat zoxide wmenu j4-dmenu-desktop hyprpaper-git hyprlock-git hypridle-git hyprland-git ttf-jetbrains-mono-nerd
 ```

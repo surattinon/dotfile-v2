@@ -5,7 +5,7 @@ allow_fp16 = true
 dll = "/home/nonzaint/.local/share/Steam/steamapps/common/Lossless Scaling/Lossless.dll"
 
 [[profile]]
-active_in = ["ACOdyssey.exe"]
+active_in = ["ACOdyssey.exe", "eldenring.exe", "PathOfExileSteam.exe", "Titanfall2.exe", "Endfield.exe"]
 flow_scale = 1.0
 gpu = "NVIDIA GeForce RTX 3050 Laptop GPU"
 multiplier = 2

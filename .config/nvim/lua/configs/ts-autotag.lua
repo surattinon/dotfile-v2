@@ -1,16 +1,33 @@
 require("nvim-ts-autotag").setup {
-  opts = {
-    -- Defaults
-    enable_close = true, -- Auto close tags
-    enable_rename = true, -- Auto rename pairs of tags
-    enable_close_on_slash = false, -- Auto close on trailing </
+  auto_close = {
+    enabled = true,
   },
-  -- Also override individual filetype configs, these take priority.
-  -- Empty by default, useful if one of the "opts" global settings
-  -- doesn't work well in a specific filetype
-  -- per_filetype = {
-  --   ["html"] = {
-  --     enable_close = false,
-  --   },
-  -- },
+  auto_rename = {
+    enabled = true,
+    closing_node_types = {
+      -- jsx
+      "jsx_closing_element",
+
+      -- xml,
+      "ETag",
+
+      -- html
+      "end_tag",
+      "erroneous_end_tag",
+
+      -- templ
+      "tag_end",
+    },
+  },
+  filetypes = {
+    "typescript",
+    "javascript",
+    "typescriptreact",
+    "javascriptreact",
+    "xml",
+    "html",
+    "templ",
+    "php",
+    "vue",
+  },
 }

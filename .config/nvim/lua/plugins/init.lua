@@ -111,13 +111,14 @@ return {
     end
   },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  -- Treesitter
+  {
+  	"nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ':TSUpdate',
+  	opts = {
+      install_dir = vim.fn.stdpath('data') .. '/lazy/nvim-treesitter/parsers',
+  		ensure_installed = { "vim", "lua", "vimdoc", "html", "css", "vue", "typescript" },
+  	},
+  },
 }

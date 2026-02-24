@@ -76,7 +76,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --icons=always --color=always $
 zstyle ':fzf-tab:complete:__zoxide__z:*' fzf-preview 'eza --icons=always --color=always'
 
 # NVM Init
-# source /usr/share/nvm/init-nvm.sh
+source /usr/share/nvm/init-nvm.sh
 
 # YAZI Setup
 function y() {
@@ -102,6 +102,7 @@ export SUDO_EDITOR=nvim
 export SELECTED_EDITOR=nvim
 # export GCM_CREDENTIAL_STORE=secretservice
 export GCM_CREDENTIAL_STORE=gpg
+export PATH="$HOME/.cargo/bin:$PATH"
 
 #######################$
 ## SHELL INTEGRATIONS ##
@@ -127,3 +128,5 @@ alias lzd="lazydocker"
 alias lzg="lazygit"
 
 alias spt="spotify_player"
+
+alias btw="clear && fastfetch"

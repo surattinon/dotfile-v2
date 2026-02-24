@@ -41,7 +41,7 @@
         	"format-disconnected": "󰤮",
           "tooltip": true,
           "tooltip-format": "{icon} {signalStrength}% {essid}",
-          "on-click": "hyprctl dispatch exec '[float; size 700 800] kitty -e nmtui'"
+          "on-click": "hyprctl dispatch exec '[float; size 700 800] kitty -e impala'"
 	},
 	"battery": {
         	"states": {
@@ -84,11 +84,11 @@
     "format": " {:L%a %d %b}",
     "calendar": {
       "format": {
-        "days": "<span weight='normal'>{}</span>",
-        "months": "<span color='#cdd6f4'><b>{}</b></span>",
-        "today": "<span color='#f38ba8' weight='700'><u>{}</u></span>",
-        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "weeks": "<span color='#a6e3a1'><b>W{}</b></span>"
+        "days": "<span color='#9399b2' weight='normal'>{}</span>",
+        "months": "<span color='#cdd6f4'>{}</span>",
+        "today": "<span color='#f38ba8' weight='700'><b>{}</b></span>",
+        "weekdays": "<span color='#f9e2af'>{}</span>",
+        "weeks": "<span color='#a6e3a1'>W{}</span>"
       },
       "mode": "month",
       "mode-mon-col": 1,

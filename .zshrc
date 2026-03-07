@@ -98,6 +98,7 @@ bindkey '^ ' autosuggest-accept
 #########
 
 export EDITOR=nvim
+export TERM=xterm-256color
 export SUDO_EDITOR=nvim
 export SELECTED_EDITOR=nvim
 # export GCM_CREDENTIAL_STORE=secretservice

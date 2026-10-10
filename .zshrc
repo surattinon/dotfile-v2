@@ -88,6 +88,8 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+# ------------
+
 #########
 ## KEY ##
 #########
@@ -103,7 +105,10 @@ export SUDO_EDITOR=nvim
 export SELECTED_EDITOR=nvim
 # export GCM_CREDENTIAL_STORE=secretservice
 export GCM_CREDENTIAL_STORE=gpg
+
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 #######################$
 ## SHELL INTEGRATIONS ##
@@ -111,6 +116,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+# eval "$(keychain --eval --quiet id_ed25519)"
+eval "$(direnv hook zsh)"
 
 ###########
 ## ALIAS ##
@@ -131,3 +138,6 @@ alias lzg="lazygit"
 alias spt="spotify_player"
 
 alias btw="clear && fastfetch"
+
+# cv4pve-cli completion
+source "/home/nonzaint/.cv4pve/cli/completion.zsh"

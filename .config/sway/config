@@ -35,12 +35,10 @@ set $menu $HOME/.config/sway/scripts/menu.sh
 
 set $browser zen-browser 
 
-set $wallpapers /home/nonzaint/Pictures/Wallpapers/
-
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
-output * bg $wallpapers/space.png fill
+output * bg $HOME/.config/hypr/wallpapers/space.png fill
 #
 # Example configuration:
 #
@@ -258,22 +256,22 @@ client.background        $base
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    swaybar_command waybar
-    # position top
-    #
-    # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-    #
-    # colors {
-    #   background         $base
-    #   statusline         $text
-    #   focused_statusline $text
-    #   focused_separator  $base
-    #
-    #   focused_workspace  $base  $mauve    $crust
-    #   active_workspace   $base  $surface2 $text
-    #   inactive_workspace $base  $base     $text
-    #   urgent_workspace   $base  $red      $crust
-    # }
+    # swaybar_command waybar
+    position top
+
+    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+
+    colors {
+      background         $base
+      statusline         $text
+      focused_statusline $text
+      focused_separator  $base
+
+      focused_workspace  $base  $mauve    $crust
+      active_workspace   $base  $surface2 $text
+      inactive_workspace $base  $base     $text
+      urgent_workspace   $base  $red      $crust
+    }
 }
 
 

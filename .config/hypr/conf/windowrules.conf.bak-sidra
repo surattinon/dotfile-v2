@@ -1,0 +1,187 @@
+##############################
+### WINDOWS AND WORKSPACES ###rul
+##############################
+
+windowrule = match:class .*, suppress_event maximize
+
+# ============ Best-practice additions (2026 review) ============
+# Keep screen awake (Noctalia idle) while any window is fullscreen (games/video)
+windowrule = match:class .*, idle_inhibit fullscreen
+# Keep Android/games rendering when unfocused (avoids frozen Sunshine frames)
+windowrule = match:class (Waydroid|^waydroid.*), render_unfocused on
+# Polkit auth prompts: float, centered, dim the background
+windowrule = match:class (hyprpolkitagent|polkit-.*), float on
+windowrule = match:class (hyprpolkitagent|polkit-.*), center 1
+windowrule = match:class (hyprpolkitagent|polkit-.*), dim_around on
+# Browser screenshare indicator: float, pin, no focus steal
+windowrule = match:title (.*Sharing Indicator.*), float on
+windowrule = match:title (.*Sharing Indicator.*), pin on
+windowrule = match:title (.*Sharing Indicator.*), no_focus on
+# GTK file-picker / portal dialogs: float + centered, a bit smaller than Thunar (1100x700)
+windowrule = match:class xdg-desktop-portal-gtk, float on
+windowrule = match:class xdg-desktop-portal-gtk, center 1
+windowrule = match:class xdg-desktop-portal-gtk, size 1000 650
+# Steam: friends list floats, notification toasts don't steal focus
+windowrule = match:title ^(Friends List)$, float on
+windowrule = match:title ^(notificationtoasts.*)$, no_focus on
+# ===============================================================
+
+#####################################################
+
+windowrule {
+  name = pavucontrol
+  match:class = org.pulseaudio.pavucontrol
+  float = on
+  size = 1000 550
+  center = 1
+}
+
+windowrule {
+  name = blueman-manager
+  match:class = blueman-manager
+  float = on
+  size = 700 650
+  center = 1
+}
+
+windowrule {
+  name = steam
+  match:class = steam
+  float = on
+  rounding = 0
+  border_size = 0
+}
+
+windowrule {
+  name = thunar-float
+  match:class = (?i)thunar
+  float = on
+  center = 1
+}
+windowrule {
+  name = thunar
+  match:class = (?i)thunar
+  match:title = (^.*Thunar)
+  size = 1100 700
+}
+
+windowrule {
+  name = mpv-imv
+  match:class = ((^mpv|^imv$))
+  float = on
+  size = 1280 720
+  center = 1
+  idle_inhibit = fullscreen
+}
+
+windowrule {
+  name = PinP
+  match:title = ^(Picture-in-Picture)
+  float = on
+  pin = on
+  size = 640 360
+  move = 1250 60
+}
+
+windowrule {
+  name = nextcloud-desktop
+  match:class = com.nextcloud.desktopclient.nextcloud
+  float = on
+}
+
+windowrule {
+  name = nextcloud-tray
+  match:class = com.nextcloud.desktopclient.nextcloud
+  match:title = Nextcloud
+  float = on
+  pin = on
+  move = 1425 50
+  size = 400 600
+  no_shadow = on
+  no_anim = on
+}
+
+windowrule {
+  name = spotify-app
+  match:class = Spotify
+  float = on
+  size = 1200 800
+  center = 1
+}
+
+windowrule {
+  name = figma
+  match:class = figma-linux
+  no_blur = on
+}
+
+windowrule {
+  name = foot
+  match:class = foot
+  rounding = 25
+  opacity = 0.92 0.85
+}
+
+windowrule {
+  name = affinity
+  match:class = (affinity.exe)
+  rounding = 8
+  no_blur = on
+  no_shadow = on
+  border_size = 0
+}
+
+windowrule {
+  name = waydroid
+  match:class = (Waydroid|^waydroid.*)
+  float = on
+
+  $phone_screen = 462 976
+  size = $phone_screen
+  max_size = $phone_screen
+  min_size = $phone_screen
+}
+
+windowrule {
+  name = line-float
+  match:class = line.exe
+  float = on
+}
+
+###############################################
+
+# Remove decoration
+windowrule {
+  name = no_decoration
+  match:class = (^steam_.*|^line.*)
+  rounding = 0
+  no_blur = on
+  no_shadow = on
+  border_size = 0
+  no_anim = on
+}
+
+## Special Workspace Startup Apps ##
+
+windowrule {
+  name = discord
+  workspace = special:  Discord
+  match:class = ^(discord)$
+  float = on
+}
+
+windowrule {
+  name = music
+  workspace = special:  Spotify
+  match:class = (?i)^spotify$
+}
+
+##############################################
+
+# Hiding tray explorer.exe
+windowrule {
+  name=hide-wine-tray
+  workspace = special:hidden_wine silent
+  match:class = explorer.exe
+  match:title = ^()$
+}

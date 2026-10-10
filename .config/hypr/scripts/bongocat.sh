@@ -2,6 +2,6 @@
 
 killall bongocat
 
-sleep 1
+sleep 5
 
 bongocat --watch-config &

@@ -93,12 +93,23 @@ return {
   },
 
   -- Markdown Viewer
+  -- {
+  --   "OXY2DEV/markview.nvim",
+  --   lazy = false,
+  --   config = function()
+  --     require "configs.markview"
+  --   end,
+  -- },
   {
-    "OXY2DEV/markview.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     lazy = false,
-    config = function()
-      require "configs.markview"
-    end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons'
+    },
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
 
   -- Center plane
@@ -108,17 +119,34 @@ return {
     version = "*",
     config = function()
       require "configs.no-neck-pain"
-    end
+    end,
   },
 
   -- Treesitter
   {
-  	"nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
     lazy = false,
-    build = ':TSUpdate',
-  	opts = {
-      install_dir = vim.fn.stdpath('data') .. '/lazy/nvim-treesitter/parsers',
-  		ensure_installed = { "vim", "lua", "vimdoc", "html", "css", "vue", "typescript" },
-  	},
+    build = ":TSUpdate",
+    opts = {
+      install_dir = vim.fn.stdpath "data" .. "/lazy/nvim-treesitter/parsers",
+      ensure_installed = { "vim", "lua", "vimdoc", "html", "css", "vue", "typescript", "go", "gomod", "gosum" },
+    },
   },
+
+  -- Obsidian
+  {
+    "obsidian-nvim/obsidian.nvim",
+    lazy = false,
+    version = "*", -- use latest release, remove to use latest commit
+    ---@module 'obsidian'
+    ---@type obsidian.config
+    opts = require "configs.obsidian",
+  },
+
+  -- Schema for YAML
+  {
+    "b0o/schemastore.nvim",
+    varsion = "false"
+  }
 }
+
